@@ -999,7 +999,6 @@ public class MainWindow extends JFrame
 		c.insets = new Insets(0,0,0,0);
 		Box b0 = new Box(BoxLayout.X_AXIS);
 		gridBox.add(b0,c);
-
 		b0.add(makeToolBtn(MicropolisTool.BULLDOZER));
 		b0.add(makeToolBtn(MicropolisTool.WIRE));
 		b0.add(makeToolBtn(MicropolisTool.PARK));
@@ -1385,6 +1384,7 @@ public class MainWindow extends JFrame
 		}};
 		taskPerformer = wrapActionListener(taskPerformer);
 
+
 		assert simTimer == null;
 		simTimer = new Timer(engine.simSpeed.animationDelay, taskPerformer);
 		simTimer.start();
@@ -1650,13 +1650,39 @@ public class MainWindow extends JFrame
 		}
 	}
 
+
 	private void showBudgetWindow(boolean isEndOfYear)
 	{
 		boolean timerEnabled = isTimerActive();
 		if (timerEnabled) {
 			stopTimer();
 		}
+		
+		checkForTurnChange(isEndOfYear);
 
+		{
+		System.out.println("End of the year?" + isEndOfYear);
+		if (isEndOfYear) {
+			System.out.println("Change turn");
+			// if is player 1's turn
+			if(engine.isPlayerOne = true)
+			{
+				// Hide the 1st half of the buttons
+				//Show the 2nd half
+				JToggleButton btn = toolBtns.get(MicropolisTool.ROADS);
+				btn.setEnabled(false);
+			}
+			// if is player 2's turn
+			else
+			{
+				// Hide the 1st half of the buttons
+				//Show the 2nd half
+				JToggleButton btn = toolBtns.get(MicropolisTool.RAIL);
+				btn.setEnabled(false);
+			}
+			}
+		}
+		
 		BudgetDialog dlg = new BudgetDialog(this, getEngine());
 		dlg.setModal(true);
 		dlg.setVisible(true);
@@ -1664,6 +1690,11 @@ public class MainWindow extends JFrame
 		if (timerEnabled) {
 			startTimer();
 		}
+	}
+	
+	private void checkForTurnChange(boolean isEndOfYear) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private JMenuItem makeMapStateMenuItem(String stringPrefix, final MapState state)
