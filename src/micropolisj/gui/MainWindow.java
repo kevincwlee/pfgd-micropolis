@@ -973,7 +973,7 @@ public class MainWindow extends JFrame
 	private JToolBar makeToolbar()
 	{
 		toolBtns = new EnumMap<MicropolisTool, JToggleButton>(MicropolisTool.class);
-
+				
 		JToolBar toolBar = new JToolBar(strings.getString("main.tools_caption"), JToolBar.VERTICAL);
 		toolBar.setFloatable(false);
 		toolBar.setRollover(false);
@@ -1050,8 +1050,161 @@ public class MainWindow extends JFrame
 		c.gridy++;
 		c.weighty = 1.0;
 		gridBox.add(new JLabel(), c);
+		
 
+		
 		return toolBar;
+	}
+	
+	private void enableForPlayer() {	
+		System.out.println(engine.isPlayerOne);
+		
+		// PLAYER ONE BUTTONS
+		
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.WIRE);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.WIRE);
+			btn.setEnabled(false);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.RAIL);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.RAIL);
+			btn.setEnabled(false);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.RESIDENTIAL);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.RESIDENTIAL);
+			btn.setEnabled(false);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.FIRE);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.FIRE);
+			btn.setEnabled(false);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.POWERPLANT);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.POWERPLANT);
+			btn.setEnabled(false);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.SEAPORT);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.SEAPORT);
+			btn.setEnabled(false);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.STADIUM);
+			btn.setEnabled(true);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.STADIUM);
+			btn.setEnabled(false);
+		}
+		
+		// PLAYER TWO BUTTONS
+		
+		
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.ROADS);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.ROADS);
+			btn.setEnabled(true);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.PARK);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.PARK);
+			btn.setEnabled(true);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.COMMERCIAL);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.COMMERCIAL);
+			btn.setEnabled(true);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.INDUSTRIAL);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.INDUSTRIAL);
+			btn.setEnabled(true);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.NUCLEAR);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.NUCLEAR);
+			btn.setEnabled(true);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.AIRPORT);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.AIRPORT);
+			btn.setEnabled(true);
+		}
+		if (engine.isPlayerOne) {
+			System.out.println("player 1");
+			JToggleButton btn = toolBtns.get(MicropolisTool.POLICE);
+			btn.setEnabled(false);
+		}
+		else {
+			System.out.println("player 2");
+			JToggleButton btn = toolBtns.get(MicropolisTool.POLICE);
+			btn.setEnabled(true);
+		}
 	}
 
 	private void selectTool(MicropolisTool newTool)
@@ -1375,6 +1528,14 @@ public class MainWindow extends JFrame
 				engine.animate();
 				if (!engine.autoBudget && engine.isBudgetTime())
 				{
+					if (engine.isPlayerOne) {
+						engine.isPlayerOne = false;
+					}
+					else {
+						engine.isPlayerOne = true;
+					}
+					enableForPlayer();
+				
 					showAutoBudget();
 					return;
 				}
@@ -1658,31 +1819,6 @@ public class MainWindow extends JFrame
 			stopTimer();
 		}
 		
-		checkForTurnChange(isEndOfYear);
-
-		{
-		System.out.println("End of the year?" + isEndOfYear);
-		if (isEndOfYear) {
-			System.out.println("Change turn");
-			// if is player 1's turn
-			if(engine.isPlayerOne = true)
-			{
-				// Hide the 1st half of the buttons
-				//Show the 2nd half
-				JToggleButton btn = toolBtns.get(MicropolisTool.ROADS);
-				btn.setEnabled(false);
-			}
-			// if is player 2's turn
-			else
-			{
-				// Hide the 1st half of the buttons
-				//Show the 2nd half
-				JToggleButton btn = toolBtns.get(MicropolisTool.RAIL);
-				btn.setEnabled(false);
-			}
-			}
-		}
-		
 		BudgetDialog dlg = new BudgetDialog(this, getEngine());
 		dlg.setModal(true);
 		dlg.setVisible(true);
@@ -1690,11 +1826,6 @@ public class MainWindow extends JFrame
 		if (timerEnabled) {
 			startTimer();
 		}
-	}
-	
-	private void checkForTurnChange(boolean isEndOfYear) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private JMenuItem makeMapStateMenuItem(String stringPrefix, final MapState state)

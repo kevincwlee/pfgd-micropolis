@@ -193,11 +193,7 @@ public class Micropolis
 
 	public CityEval evaluation;
 	
-	public boolean isPlayerOne;
-	{
-		if (cityTime/48 % 2 == 0);
-			isPlayerOne = true;
-	}
+	public boolean isPlayerOne = true;
 	// New Feature: turn-based player tracking
 
 	ArrayList<Sprite> sprites = new ArrayList<Sprite>();
@@ -2707,4 +2703,6 @@ public class Micropolis
 	{
 		budget.totalFunds = totalFunds;
 	}
+
+
 }
